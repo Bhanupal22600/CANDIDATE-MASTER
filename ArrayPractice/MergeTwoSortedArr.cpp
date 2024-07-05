@@ -1,3 +1,4 @@
+//
 #include<iostream>
 #include<vector>
 using namespace std;
@@ -21,7 +22,7 @@ while(i<n1 && j<n2){
     }
 }
 
-if(i==n1){
+if(i==n1){//yeh tab hit hogi jab v1 k sarre element khatm ho jaye and v2 k bachenge obviously
     while(j<n2){
         res[k]=v2[j];
         j++;
@@ -29,7 +30,7 @@ if(i==n1){
     }
 }
 
-if(j==n2){
+if(j==n2){//yeh tab hit hogi jab v1 k sarre element khatm ho jaye & v1 k bacchenge obviously
     while(i<n1){
         res[k]=v1[i];
         i++;
@@ -47,7 +48,7 @@ int main(){
 vector<int> v1;
 vector<int> v2;
 v1.push_back(3);
-v1.push_back(5);
+v1.push_back(4);
 v1.push_back(6);
 v1.push_back(7);
 v1.push_back(8);
