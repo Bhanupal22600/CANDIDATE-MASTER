@@ -58,6 +58,9 @@ int main(){
     nums.push_back(1);
     nums.push_back(0);
     nums.push_back(0);
+    nums.push_back(1);
+    nums.push_back(0);
+    nums.push_back(0);
     
     
     
