@@ -14,6 +14,9 @@ int main(){
             cin>>arr[i][j];
         }
 }   
+//this is valid for any given order of m*n but
+//if we dont want to utilize extra space brr then its not possible to transpose matrix 
+//with m!=n,but we can do this through another code which is valid for square matrix only using swapping concept in upper triangle
     int brr[n][m];
     for(int i=0;i<n;i++){
         for(int j=0;j<m;j++){
