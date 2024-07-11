@@ -42,7 +42,9 @@ int main(){
     cout<<endl;
     cout<<str2<<endl;
 
-
+    char str3[]={'a','b','\0','d','e','f'};
+    
+        cout<<str3<<endl;// jase hi \0 aaya printing chord dega 
 
 
 }
