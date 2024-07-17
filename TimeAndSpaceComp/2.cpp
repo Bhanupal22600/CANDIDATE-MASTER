@@ -31,4 +31,7 @@ int main() {
     
     return 0;
 }
-//
+//good method saves time 
+//but not space -memory limit exceeded
+//in space jo given space hota hai usko count nhi krte hm
+//jo extra nbanate hai hm vo count hota hai

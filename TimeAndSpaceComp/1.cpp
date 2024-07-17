@@ -19,4 +19,5 @@ int main(){
     }
     
 }
-//
+//Time consuming-tle may come 
+//space efficient
