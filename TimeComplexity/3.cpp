@@ -12,4 +12,6 @@ int main(){
     }
     int s=(8-1)*((8-1)+1)/2;
     cout<<sum-s;
-}
+}//time efficient 
+//space efficient 
+//it is best possible code for this question
