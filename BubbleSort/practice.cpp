@@ -10,6 +10,21 @@ int main(){
             str.push_back(s[i]);
         }
     }
-    sort(str.begin(),str.end());
+    int n=str.length();
+     bool flag=true;
+    for(int i=0;i<n-1;i++){//n-1 passes
+        //traverse
+        for(int j=0;j<n-1-i;j++){//after putting -i in this line we get our efficient bubble sort code 
+            if(str[j]>str[j+1]){
+                //swap
+                swap(str[j],str[j+1]);
+                flag=false;
+            }
+        }
+        if(flag==true){//swap didn't happen
+            break;
+        }
+    }
+    
     cout<<str;
 }
