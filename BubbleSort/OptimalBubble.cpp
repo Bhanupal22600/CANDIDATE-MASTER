@@ -33,7 +33,7 @@ AVg case :O(n^2)
 worst case:O(n^2)
 */
 // bubble is a stable sort 
-//eg. 5 3 5 1 2
-// afetr bubble sort we get 1 2 3 5 5
+//eg. 5a 3 5b 1 2
+// afetr bubble sort we get 1 2 3 5a 5b
 // and between these two 5 jo phela wala 5 tha wo hai index3 pr and 2nd wala 5 index 4 pr ha
 //means  order same raha phala wala 5 phele pr dusra wala 5 dusre pr so its called stable
