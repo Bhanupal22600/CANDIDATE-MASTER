@@ -9,3 +9,8 @@ int main(){
     //1 1 2 3 5 8 13 21 34 55 89 ...
     cout<<fibo(8);
 }
+/*for n
+1+2^1+2^2+2^3....2^n-1
+T.C=O(2^n)
+this is called expontial time complexity
+*/
