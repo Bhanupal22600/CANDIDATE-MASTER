@@ -16,7 +16,7 @@ void merge(vector<int>& a,vector<int>& b,vector<int>& res){
 
     }
     if(j==b.size()){// a is at end
-        while(j<a.size()){
+        while(i<a.size()){
             res[k++] = a[i++];
         }
 
