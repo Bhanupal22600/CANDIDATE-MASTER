@@ -15,9 +15,9 @@ int main(){
         else{
             while(n>0){
                 ll ans =n%k;
-                if (ans>0){
+                
                     cnt+=ans;
-                }
+                
                 n/=k;
             }
             cout<<cnt<<endl;
