@@ -1,7 +1,22 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-
+int count=0;
+int inversion(vector<int> & a, vector<int> & b){
+    int count =0;
+    int i=0;//a
+    int j=0;//b
+    while(i<a.size() && j<b.size()){
+        if(a[i]>b[j]) {
+            count+=(a.size()-i);
+            j++;
+        }
+        else{// a[i]<=b[j]
+            i++;
+        }
+    }
+    return count;
+}
 void merge(vector<int>& a,vector<int>& b,vector<int>& res){
     int i=0;
     int j=0;
@@ -45,7 +60,8 @@ void mergeSort(vector<int>& v) {
     // Recursively sort the sub-arrays
     mergeSort(a);
     mergeSort(b);
-    
+    //count the inversions
+    count+=inversion(a,b);
     // Merge the sorted sub-arrays back into the original vector
     merge(a, b, v);
     // now this is modify version of merge here 
@@ -55,7 +71,7 @@ void mergeSort(vector<int>& v) {
 }
 
 int main() {
-    int arr[] = {4,1,5,2,3};
+    int arr[] = {5,1,3,0,4,2,6};
     int n = sizeof(arr) / sizeof(arr[0]);
     
     vector<int> v(arr, arr + n);//copy kre hai bas element of arr in v as in vector we have levearage to do v.size()
@@ -69,49 +85,8 @@ int main() {
     // Sort the array using merge sort
     mergeSort(v);
     
-    // Print the sorted array
-    for (int i = 0; i < v.size(); i++) {
-        cout << v[i] << " ";
-    }
+    cout<<count;
 
     return 0;
 }
-/*             v=4,1,5,2,3
-
-
-//first mergeSort call in v
-     4,1                     5,2,3
-
-
-
-
-// mergesort call in this 
-4          1            5       2,3
-
-
-
-
-
-// merge call in 4 and 1           //mergeSort call in 2,3
-
-
-
-
-     1,4                5      2     3
-
-
-                                // merge in 2,3
-
-
-
-                        5        2,3
-     1,4                         2,3,5
-
-
-// after merge call in these two sorted vec
-
-               1,2,3,4,5
-*/
-// time complexity O(n)=O(nlogn) here-log is with base 2
-// space complexity O(n)=O(nlogn)
-// merge sort is stable
+//method2
