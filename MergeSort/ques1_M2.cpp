@@ -1,7 +1,9 @@
 #include<iostream>
 #include<vector>
 using namespace std;
-int count=0;
+
+//new function for this ques only
+int count=0;// global variable
 int inversion(vector<int> & a, vector<int> & b){
     int count =0;
     int i=0;//a
@@ -17,6 +19,9 @@ int inversion(vector<int> & a, vector<int> & b){
     }
     return count;
 }
+//end
+
+
 void merge(vector<int>& a,vector<int>& b,vector<int>& res){
     int i=0;
     int j=0;
@@ -61,7 +66,7 @@ void mergeSort(vector<int>& v) {
     mergeSort(a);
     mergeSort(b);
     //count the inversions
-    count+=inversion(a,b);
+    count+=inversion(a,b);//crux of this tyoe of ques
     // Merge the sorted sub-arrays back into the original vector
     merge(a, b, v);
     // now this is modify version of merge here 
@@ -90,3 +95,5 @@ int main() {
     return 0;
 }
 //method2
+//sc=O(n);
+//T.C=O(nlogn)
