@@ -1,3 +1,4 @@
+//write a program to find kth smallest element in an array using quicksort.(quick select)
 #include<iostream>
 using namespace std;
 int partition(int arr[],int si,int ei){
@@ -27,30 +28,36 @@ int partition(int arr[],int si,int ei){
 
 
 }
-void quicksort(int arr[],int si,int ei){
-    if(si>=ei) return;
-    //5,1,8,2,7,6,3,4
+int kthSmallest(int arr[],int si,int ei,int k){
     int pi=partition(arr,si,ei);
-    // 4 1 3 2 5 7 8 6
-    quicksort(arr,si,pi-1);//4 1 3 2
-    quicksort(arr,pi+1,ei);//7 8 6
+    if(pi+1==k) return arr[pi];
+    else if(pi+1<k) return kthSmallest(arr,pi+1,ei,k);
+    else return kthSmallest(arr,si,pi-1,k);
+    
 }
 int main(){
-    int arr[]={5,1,8,2,7,6,3,4};
+    int arr[]={5,1,8,2,7,6,3,4,};
     int n=sizeof(arr)/sizeof(arr[0]);
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
     cout<<endl;
-    quicksort(arr,0,n-1);
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
-    }
+    int k=4;
+    cout<<kthSmallest(arr,0,n-1,k);  
 
 }
-//avg.case    T.C=O(n.logn)
-//worst case  T.C=O(n^2) this can be reduce if we use pivot index which is at arr[(si+ei)/2] instead of arr[si]
-//S.C=O(logn) ye call stack m space le rha hai when we are calling a function
-// quick sort is unstable
-// internal sort uses variation of quick sort i.e built in sort
-//whenever there is no need of stability ,we use quick sort
+//avg.case    T.C=O(n) known as quick select
+
+
+//let's say we have to find 5th samllest element in 5,1,8,2,7,6,3,4,
+
+/*
+5,1,8,2,7,6,3,4, here 2 is pivot we get
+1,2,8,5,7,6,3,4, we see that k>2 so we search in right side here we do partition such that pivot index lhs,rhs smaller and larger than pivot respectively
+1,2,[8,5,7,6,3,4,] now we get 7 is pivot which is at middle index
+1,2,[4,5,3,6,7,8,] after partition of 7 pivot 
+1,2,[4,5,3,6,],7,8 as k<pivot(ie 7) we search in its L.H.S and now we got pivot as 5
+5,1,[4,3,5,6,],7,8, now as k==5 so return
+*/
+
+
