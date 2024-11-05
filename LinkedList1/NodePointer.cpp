@@ -22,6 +22,7 @@ Node* a= new Node(10);// to avoid above three line we use this single line initi
 Node* b= new Node(20);
 Node* c= new Node(30);
 Node* d= new Node(40);
+//these all above are manual linkedlist and we study llclass.cpp eske baad
 a->next=b;// abe eska mtlb hai a ke next pr b assign krdo as next khud m pointer hai so vo b ka adress print krga
 b->next=c;// c ka adress b k next pr daldo
 c->next=d;

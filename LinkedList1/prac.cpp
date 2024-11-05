@@ -12,13 +12,28 @@ class Node{
 };
 
 void display(Node* head){
-    Node* temp=head;
-    while(temp!=NULL){
-        cout<<temp->val<<" ";
-        temp=temp->next;
-    }
-    cout<<endl;
+     Node* temp=head;
+     while(temp!=NULL){
+         cout<<temp->val<<" ";
+         temp=temp->next;
+     }
+     cout<<endl;
+    
 }
+
+void displayrec(Node* head){
+    if(head==NULL) return;
+    cout<<head->val<<" ";
+    displayrec(head->next);
+}
+
+void displayreverse(Node* head){
+    if(head==NULL) return;
+    displayreverse(head->next);
+    cout<<head->val<<" ";
+    
+}
+
 int size(Node* head){//head m a ka adrress hai
      Node* temp=head;
      int n=0;
@@ -40,7 +55,14 @@ c->next=d;
 d->next=e;
 
 display(a);
-cout<<size(a);
+cout<<size(a)<<endl;
+
+displayrec(a);
+cout<<endl;
+
+//reverse order me nodes ko print krne k liye
+displayreverse(a);
+
 
 
 
