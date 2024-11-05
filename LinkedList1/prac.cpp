@@ -11,7 +11,7 @@ class Node{
     
 };
 
-void display(Node* head){//bhhanu pal class
+void display(Node* head){
     Node* temp=head;
     while(temp!=NULL){
         cout<<temp->val<<" ";
