@@ -118,6 +118,14 @@ class LinkedList{ // User defined data structure bhi use kr sakte hai hm class k
         }
         cout<<endl;
     }
+
+    void deletenode(Node* head, Node* target){
+        Node* temp=head;
+        while(temp->next!=target){
+            temp=temp->next;
+        }
+        temp->next=temp->next->next;
+    }
 };
 int main(){
     //like vector<int> v 
@@ -168,6 +176,10 @@ int main(){
 
     ll.deleteAtIdx(3);//70
     ll.display();
+
+
+    deletenode(a,d);
+    ll.display()
 
     cout<<endl<<ll.size;
 }
