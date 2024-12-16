@@ -11,9 +11,11 @@ int max_power_of2(int n) {
 }
 
 int main() {
-    int n = 5;  // 10111 in binary
-    int m = max_power_of2(n);  // m becomes the highest bits all set up to the bit length of n
-    int flipped = n ^ m;  // XOR with m to flip all bits of n
+    int n = 8;  // 10111 in binary
+    int m = 7;  // m becomes the highest bits all set up to the bit length of n
+    int flipped =n ^ m;  // XOR with m to flip all bits of n
+    int fl=m%(n ^ m);
     cout << flipped << endl;
+    cout<<fl;
     return 0;
 }
