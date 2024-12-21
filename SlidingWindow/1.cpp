@@ -17,7 +17,6 @@ int main(){
             maxsum=sum;
             maxidx=i;
         }
-        
     }
     // tno=(n-k+1)*k
     // time complexity=O(k*n)=O(n^2); bad
