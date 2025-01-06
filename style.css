@@ -1,0 +1,79 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: #548687;
+    text-align: center;
+
+}
+
+.container{
+    height:70vh;/*mtlb 70 percentage of page always is container k pss hi rhega*/
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.game{
+    height:60vmin;/*container ka 60 percent height means 70 ka 60 per is approx 40*/
+    width:60vmin;
+    display :flex;
+    flex-wrap: wrap;/*jaghe nahi hai toh next line m aa jao*/
+    justify-content: center;
+    align-items: center;
+    gap:1.5vmin;/* to give gap btw boxes*/
+}
+
+.box{
+    height:18vmin;/*gme k 18 percent*/
+    width:18vmin;
+    border-radius: 1 rem;
+    border:none;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 1);
+    font-size: 8vmin;
+    color:#b0413e;
+    background-color: #fff767;
+
+}
+
+#reset-btn{
+ padding : 1rem;
+ font-size:1.5rem;
+ background-color: #191913;
+ color:#fff;
+ border-radius: 1rem;
+ border:none;
+}
+
+
+#new-btn{
+    padding : 1rem;
+    font-size:1.5rem;
+    background-color: #191913;
+    color:#fff;
+    border-radius: 1rem;
+    border:none;
+}
+
+#msg{
+    color:#b0413e;
+    font-size: 8vmin;
+}
+
+.msg-container{
+    height: 120vmin;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+
+
+}
+
+.hide{
+    display: none;
+}
