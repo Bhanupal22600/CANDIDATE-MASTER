@@ -2,7 +2,6 @@
 #include<iostream>
 #include<climits>
 using namespace std;
-
 int main(){
     int arr[]={12,3,1,6,1,6,6,6,6,4,3,8,13,13,13,13,8};
     int n=17;
