@@ -44,7 +44,8 @@
         "typeinfo": "cpp",
         "regex": "cpp",
         "chrono": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "double_linklist": "cpp"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
