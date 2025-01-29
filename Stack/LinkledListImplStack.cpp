@@ -47,7 +47,6 @@ public:
         Node* temp = head;
         print( temp);
         cout<<endl;
-        
     }
 
 };
