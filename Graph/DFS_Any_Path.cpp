@@ -37,7 +37,6 @@ int main(){
         int s,d;
         cin>>s>>d;
         add_edge(s,d,false);
-
     }
     int x,y;
     cin>>x>>y;

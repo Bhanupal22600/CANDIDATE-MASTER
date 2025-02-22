@@ -13,9 +13,9 @@ class Node{
 //(*ptr).name=ptr->name
 
 int main(){
-/*Node a;
-a.val=10;
-a.next=&b;*/
+    /*Node a;
+    a.val=10;
+    a.next=&b;*/
 Node* a= new Node(10);// to avoid above three line we use this single line initiliazation for a node
 //a ek daba hai jisme bas ek adress store hota hai this new node ka jiski val =10 hai and next=null 
 // this is like (int* ptr= int a )toh ab ptr m a ka adress hai aur new hm likhte hai in oops 

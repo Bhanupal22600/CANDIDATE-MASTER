@@ -19,7 +19,6 @@ void display(){
         }
         cout<<endl;
     }
-
 }
 int main(){
     cin>>v;
@@ -35,3 +34,4 @@ int main(){
     display();
     return 0;
 }
+//same code as adj list only here we take list<pair,pair>

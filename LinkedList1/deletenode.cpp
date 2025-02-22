@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
-class Node{
+class Node{//Node ek data structure h jo hmne banay hai jisme ek int,pointer datastruct hai
     public:
     int val;
-    Node* next;
+    Node* next;// next ek pointer hai jo address store krega and when we do *next toh jiska addrs store hai us dabbe m jakr value le aayega uski
     Node(int val){
         this->val=val;
         this->next=NULL;

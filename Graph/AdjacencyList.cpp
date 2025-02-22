@@ -19,7 +19,6 @@ void display(){
         }
         cout<<endl;
     }
-
 }
 int main(){
     cin>>v;
@@ -30,8 +29,8 @@ int main(){
         int s,d;// kis kis k beech m edge hai
         cin>>s>>d;
         add_edge(s,d,false);
-
     }
     display();
     return 0;
 }
+// its a array of linklist where array length is equals no of vertices means every ele of array is rpst as a linklist

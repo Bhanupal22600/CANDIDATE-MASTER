@@ -29,7 +29,7 @@ void dfs(int curr, int end,vector<int> &path){
         }
     }
     path.pop_back();
-    visited.erase(curr);
+    visited.erase(curr);//vertex ko unvisited krege also so that in future we use this vertex for other path
     return ;
 }
 bool allPath(int src,int dest){

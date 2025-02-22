@@ -1,5 +1,6 @@
 // print elements of nth level
 #include <iostream>
+#include<queue>
 using namespace std;
 class Node
 { // This is a TreeNode
@@ -63,10 +64,21 @@ void levelOrder(Node *root)
         cout << endl;
     }
 }
-
+void levelOrderQueue(Node* root){//BFS
+    queue<Node*> q;
+    q.push(root);
+    while(q.size()>0){
+        Node* temp =q.front();
+        q.pop();
+        cout<<temp->val<<" ";
+        if(temp->left!=NULL) q.push(temp->left);// address push ho rha hai us node ka as hamari queue ka data type Node* hai so Node ka address store krega
+        if(temp->right!=NULL) q.push(temp->right);
+    }
+    cout<<endl;
+}
 int main()
 {
-    Node *a = new Node(1);
+    Node *a = new Node(1);//root
     Node *b = new Node(2);
     Node *c = new Node(3);
     Node *d = new Node(4);
@@ -85,4 +97,6 @@ int main()
     levelOrder(a);
     cout << endl;
     levelOrderRev(a);
+    cout << endl;
+    levelOrderQueue(a);
 }

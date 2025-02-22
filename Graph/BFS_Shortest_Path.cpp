@@ -1,3 +1,4 @@
+// source node se sare node ka minmdist
 #include<iostream>
 #include<vector>
 #include<list>
@@ -30,10 +31,9 @@ void bfs(int src,vector<int> &dist){
         for(auto neighbour: graph[curr]){
             if(not visited.count(neighbour)){
                 qu.push(neighbour);
-                visited.insert(neighbour);
+                visited.insert(neighbour);// visited mark kr denge
                 dist[neighbour] = dist[curr]+1;
             }
-
         }
     }
 }

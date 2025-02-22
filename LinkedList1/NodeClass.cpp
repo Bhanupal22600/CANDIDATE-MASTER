@@ -10,7 +10,7 @@ using namespace std;
 class Node{//linked list node
     public:
     int val;
-    Node* next;// as we can only store address in pointer
+    Node* next;// as we can only store address in pointer and here node* has its importance like in int data type we say int* to store addreass of any int variable and here we store any node address using node* in which we have 2 thing inside it i.e val,pointer(of node data type) but for a single node both 2 itself things have same address
     Node(int val){
         this->val=val;// to avoid val=val so that compiler dont confuse we do this.val
         this->next=NULL;//to set all initial address to 0x0 so that icant take garbage value if got given any address
@@ -33,8 +33,8 @@ c.next=&d;
 
 cout<<a.next<<endl;
 
-Node* ptr=&b;
-(*ptr).val=60;// or ptr->60
+Node* ptr=&b;// kyuki ek ptr ma ab b dabbe ki val,next dono ka ek hi address hai
+(*ptr).val=60;// or ptr->60   , also *ptr value layega jis dabbe ka address hai ptr m but here val,next do cheez hai ptr m so to decide which one we use *ptr.val ,*ptr.next etc
 cout<<b.val<<endl;
 
 
