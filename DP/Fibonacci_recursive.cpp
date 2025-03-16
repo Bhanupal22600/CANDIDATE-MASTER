@@ -14,7 +14,7 @@ int f(int n){
 int main(){
     int n;
     cin>>n;
-    dp.clear();
+    dp.clear();// to clear garbage of previous tes case as our dp is global
     dp.resize(n+1,-1);// dp[i]==-1 that ith subproblem is not yet computed
     cout<<f(n)<<endl;
     return 0;
