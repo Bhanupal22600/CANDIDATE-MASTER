@@ -1,15 +1,6 @@
 #include <iostream>
-using namespace std;
 
-int solve(int x) {
-    for (int y = 1; y < x; ++y) {
-        int z = x ^ y;
-        if (z < x + y && x < y+z && y<x+z) {
-            return y;
-        }
-    }
-    return -1;
-}
+using namespace std;
 
 int main() {
     int t;
@@ -17,7 +8,14 @@ int main() {
     while (t--) {
         int x;
         cin >> x;
-        cout << solve(x) << "\n";
+
+        if (x == 2) { // Special case: x = 2
+            cout << -1 << "\n";
+        } else if (x % 2 == 0) {
+            cout << 1 << "\n";
+        } else {
+            cout << 2 << "\n";
+        }
     }
     return 0;
 }

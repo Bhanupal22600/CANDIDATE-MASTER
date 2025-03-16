@@ -34,16 +34,14 @@ int fbu(){// T.C=O(nk)
         }
     }
     return dp[0];
-
 }
 int main(){
     int n;
     cin>>n>>k;
     h.resize(n);
-    //dp.resize(n,-1);
-    for(int i=0;i<n;i++) cin>>h[i];
-    //cout<<f(0)<<endl;
-    cout<<fbu()<<endl;
+    //dp.resize(n,-1);// dp[i]==-1 -> ith state not yet compute
+    for(int i=0;i<n;i++) cin>>h[i];// heights
+    //cout<<f(0)<<endl;// top down
+    cout<<fbu()<<endl;// bottom up
     return 0;
 }
-// TLE

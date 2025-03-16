@@ -25,6 +25,6 @@ int main(){
 }
 
 //bottom up -> iterative and hme order of preparation of subproblem figure out krni hoti hai
-//T.C=O(n),S.C=O(1)
+//T.C=O(n),S.C=O(1)// as vector nhi use kr rhe hm a,b,c ki value hi update kr krke ho gya
 
 // greedy algo is focus on local optimal whereas dp focus on minm cost from local minm to end on brute force soln

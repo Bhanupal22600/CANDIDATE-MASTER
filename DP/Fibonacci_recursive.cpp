@@ -4,6 +4,7 @@ using namespace std;
 
 vector<int> dp;
 
+//top down soln(Memoziation)
 int f(int n){
     if(n==0 or n==1) return n;
     // dp check, to identify if problem was already solved earlier
