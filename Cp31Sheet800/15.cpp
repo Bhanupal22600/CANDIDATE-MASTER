@@ -7,7 +7,6 @@ void calc(){
     int arr[n];
     int odd=0;
     int even=0;
-
     for(int i=0;i<n;i++){
         cin>>arr[i];
         if(arr[i]>0){
@@ -17,8 +16,6 @@ void calc(){
             odd++;
         }
     }
-
-
     int opt=0;
     if(odd*(-1)+even*(1)<0){
         if((odd-even)%2==0){

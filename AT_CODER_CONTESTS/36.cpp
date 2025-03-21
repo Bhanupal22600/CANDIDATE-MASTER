@@ -1,32 +1,37 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
+#include <bits/stdc++.h>
 using namespace std;
- 
-int main(void) {
-    ios_base::sync_with_stdio(false);cin.tie(NULL);
-    
-    long long T=1;
-cin>>T;
-while(T--)
-{
-    long long n,m;
-    cin>>n>>m;
-    vector<long long> a(n);
-    long long ans = 0;
-    for(auto &s:a){
-        for(long long j=0;j<m;j++){
-            long long x;
-            cin>>x;
-            s+=x;
-            ans+=s;
-        }
+
+void calc(){
+    int n,k;
+    cin>>n>>k;
+    vector<int> v(n,0);
+    for(int i=0;i<n;i++){
+        v[i]=i+1;
     }
-    sort(a.begin(),a.end());
-    for(long long i=0;i<n;i++)
-        ans+=m*i*a[i];
-    cout<<ans<<endl;
- 
-}   
+    if(n==1){
+        cout<<"-1"<<endl;
+        return;
+    }
+    if(k>n/2){
+        cout<<"-1"<<endl;
+        return;
+    }
+    
+   
+    for(int i=0;i<=(n+1)/2;i++){
+        swap(v[i],v[i+k]);
+    }
+    for (int i = 0; i < n; i++) {
+        cout << v[i]<<" ";
+    }
+    cout << endl;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        calc();
+    }
     return 0;
 }
