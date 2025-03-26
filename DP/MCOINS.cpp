@@ -19,7 +19,6 @@ int main(){
 
     for(int i=2;i<=1000000;i++){
         if(i==k or i==l) continue;
-
         dp[i]= !(dp[i-1] and ((i-k>=1) ? dp[i-k] : 1  ) and ((i-l>=1) ? dp[i-l] : 1));
     }
 
