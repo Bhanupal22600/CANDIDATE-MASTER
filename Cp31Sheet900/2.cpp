@@ -53,7 +53,6 @@ void calc(){
 
         }
     
-
 }
 int main(){
     int t;
