@@ -14,11 +14,11 @@ void calc(){
     long long ne=0;
     for(long long i=0;i<n;i++){
         cin>>v[i];
-        
+        mx=max(mx,v[i]);
         if(v[i]%2!=0){
             so+=v[i];
             no++;
-            mx=max(mx,v[i]);
+            
         }
         else{
             se+=v[i];
@@ -40,7 +40,7 @@ void calc(){
         return;
     }
     if(no==0){
-        cout<<se-1<<endl;
+        cout<<mx<<endl;
         return;
     }
     cout<<se+so-no+1<<endl;

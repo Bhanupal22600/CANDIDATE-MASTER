@@ -3,6 +3,11 @@
 #include <vector>
 using namespace std;
 
+void calc2(){
+    int m;
+    cin>>m;
+    
+}
 void calc() {
     int n;
     cin >> n;
