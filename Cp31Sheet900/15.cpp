@@ -8,6 +8,7 @@ void calc(){
     for(int i=0;i<n;i++){
         cin>>v[i];
     }
+    
     int cn=0;
     for(int i=n-1;i>0;i--){
         if(v[i]<=v[i-1]){
