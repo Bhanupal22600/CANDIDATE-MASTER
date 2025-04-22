@@ -4,7 +4,7 @@ using namespace std;
 int main(){
     // map<key,value> m;
     unordered_map<string,int> m;// inbuilt class hai phele se in c++ jis class m string ,int do input hai
-    pair<string,int> p1;
+    pair<string,int> p1;//pair ek user defined datatype hai we can say a class  pair jisme string ,int two datatype honge
     p1.first ="bhanu";
     p1.second =76;
     m.insert(p1);
@@ -26,7 +26,10 @@ int main(){
     // INSERT KRNE KA EASY WAY->use this it is best to remember also less line it takes
     m["harsh"]=12;
     m["vivek"]=102;
-    for(auto p : m){
+
+
+    for(auto p : m){// auto khud hi recognize krleta hai kis type ki baat ho rhi hai 
+        // here pair<string,int> datatype for some other case it is int
         cout<<p.first<<" "<<p.second<<endl;
     }
 

@@ -3,7 +3,7 @@
 #include<map>
 using namespace std;
 int main(){
-    set<int> s;// increasing order m store krega not like unordered set random
+    set<int> s;// increasing order m store krega not like unordered set random and set ki prop follow krega
     s.insert(5);
     s.insert(3);
     s.insert(7);
@@ -16,7 +16,7 @@ int main(){
     m[3]=20;
     m[1]=10;
     for(auto x : m){
-        cout<<x.first<<" ";// ket k inc order m
+        cout<<x.first<<" ";// key k inc order m
     }
     for(auto x : m){
         cout<<x.second<<" ";// value k order m inc nhi krta it depends on key basis

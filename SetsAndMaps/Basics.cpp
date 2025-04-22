@@ -1,5 +1,5 @@
 #include<iostream>
-#include<unordered_set>
+#include<unordered_set>// for set like in vector we define
 using namespace std;
 int main(){
     unordered_set<int> s;
@@ -22,7 +22,6 @@ int main(){
     }
     cout<<endl;
     cout<<s.size()<<endl;// not 7 its 6
-
 
     // s.find()
     int target = 2;
