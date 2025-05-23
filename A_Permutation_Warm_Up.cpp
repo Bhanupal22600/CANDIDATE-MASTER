@@ -9,7 +9,7 @@ void calc(){
         s+=k;
         k-=2;
     }
-    cout<<s/2+1<<endl;
+    cout<<s+1<<endl;
 }
 int main(){
     int t;

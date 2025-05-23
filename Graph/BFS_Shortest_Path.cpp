@@ -16,7 +16,6 @@ void add_edge(int src,int dest,bool bi_dir=true){
         graph[dest].push_back(src);
     }
 }
-
 void bfs(int src,vector<int> &dist){
     queue<int> qu;
     visited.clear();

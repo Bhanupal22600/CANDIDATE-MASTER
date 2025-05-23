@@ -24,10 +24,8 @@ int calc(int n) {
         a = b;
         b = c;
     }
-    
     return b;
 }
-
 int main() {
     int n;
     cin >> n;

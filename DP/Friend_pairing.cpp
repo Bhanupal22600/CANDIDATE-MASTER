@@ -7,6 +7,6 @@ int f(int n){
     return f(n-1)+ (n-1)*f(n-2);
 }
 int main(){
-    cout<<f(5)<<endl;
+    cout<<f(4)<<endl;
     return 0;
 }

@@ -90,13 +90,10 @@ void display(){
     while(temp){
         cout<<temp->val<<" ";
         temp = temp->next;
-
     }
     cout<<endl;
 }
-
 };
-
 int main(){
     Deque dq;
     dq.pushBack(10);
