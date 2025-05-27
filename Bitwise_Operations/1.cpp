@@ -5,9 +5,16 @@ int main(){
     if(x>y and y<x) cout<<x;
 }
 /*
-Basic bitwise operations
+logical operator(applied on boolean ):
+ans &&
+or ||
+not !
+
+Basic bitwise operations(applied on bits)
 AND=&(and gate)
 OR=|(or gate)
 NOT=~(not gate)
 XOR=^(xor gate)
+<< left shift bitwise operator
+7=111 ,7<<3  111000
 */

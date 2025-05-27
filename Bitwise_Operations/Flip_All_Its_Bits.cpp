@@ -9,7 +9,6 @@ int max_power_of2(int n) {
     n = n | (n >> 16);
     return n;
 }
-
 int main() {
     int n = 8;  // 10111 in binary
     int m = 7;  // m becomes the highest bits all set up to the bit length of n

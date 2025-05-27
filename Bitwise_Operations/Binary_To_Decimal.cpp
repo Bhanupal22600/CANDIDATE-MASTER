@@ -26,6 +26,7 @@ int main(){
 we can says
 1 ke aage x zero means 2^x
 
+// "<<" is called left shift bitwise operator 
 
 left shift << opertor shift  bits towards left 
 eg 5<<2 here we shift the  two binary bits of 5 towards left so 
