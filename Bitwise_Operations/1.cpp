@@ -9,7 +9,6 @@ logical operator(applied on boolean ):
 ans &&
 or ||
 not !
-
 Basic bitwise operations(applied on bits)
 AND=&(and gate)
 OR=|(or gate)

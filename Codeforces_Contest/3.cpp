@@ -1,20 +1,34 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
 using namespace std;
-void calc(){
-    int n;
-    cin>>n;
-    int s=0;
-    int k=n-1;
-    while(k>0){
-        s+=k;
-        k-=2;
-    }
-    cout<<s/2+1<<endl;
-}
-int main(){
-    int t;
-    cin>>t;
-    while(t--){
-        calc();
-    }
+
+int main() {
+    int n=9;
+    int cn=0;
+    vector<vector<int>> mat = {
+        {0, 0, 0, 0, 0, 1, 0, 1, 0},
+        {0, 1, 0, 1, 0, 0, 1, 0, 1},
+        {0, 0, 1, 0, 1, 1, 1, 0, 1},
+        {1, 0, 0, 0, 1, 1, 0, 1, 0},
+        {1, 0, 0, 0, 1, 0, 0, 0, 1},
+        {1, 1, 0, 0, 1, 0, 0, 0, 1},
+        {1, 1, 0, 1, 1, 0, 0, 0, 1},
+        {1, 0, 1, 1, 1, 1, 1, 1, 1},
+        {1, 0, 1, 1, 1, 1, 0, 1, 0}
+    };
+    vector<vector<int>> rotated(n, vector<int>(n));
+
+    // Rotate matrix by 180 degrees
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            rotated[n - 1 - i][n - 1 - j] = mat[i][j];
+
+    // Compare and output differing positions
+    cout << "Positions with differing elements:\n";
+    for (int i = 0; i < n; ++i)
+        for (int j = 0; j < n; ++j)
+            if (mat[i][j] != rotated[i][j])
+                cout << "(" << i << ", " << j << ")\n";
+
+    return 0;
 }
