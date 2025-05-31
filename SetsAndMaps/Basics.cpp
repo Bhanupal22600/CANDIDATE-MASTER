@@ -11,7 +11,6 @@ int main(){
     s.insert(6);
     // ye saab random order m insert ho rhe hai
     // toh ab enhe print kase kre use for each ele loop
-
     for(int ele: s ){
         cout<<ele<<" ";
     }
@@ -22,7 +21,6 @@ int main(){
     }
     cout<<endl;
     cout<<s.size()<<endl;// not 7 its 6
-
     // s.find()
     int target = 2;
     // s.find() do kaam krta hai it searches in the set,and if it is not found then it returns the last element
