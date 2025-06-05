@@ -2,26 +2,25 @@
 using namespace std;
 
 void calc() {
-    int n,c;
-    cin>>n>>c;
+    int n;
+    cin>>n;
     vector<int> v(n);
-    vector<int> u(n);
+    vector<int> u;
+    int flag=0;
+    int ans;
     for(int i=0;i<n;i++){
         cin>>v[i];
-        u[i]=min(i+1+v[i],v[i]+n-i);
-    }
-    sort(u.begin(),u.end());
-    int cn=0;
-    for(int i=0;i<n;i++){
-        if(c-u[i]>0){
-            cn++;
-            c-=u[i];
+        if(v[i]!=i ){
+            u.push_back(v[i]);
         }
     }
-    cout<<cn<<endl;
+    ans=u[0];
+    for(auto el:u){
+        ans&=el;
+    }
+    cout<<ans<<endl;
     return;
 
-    
 }
 
 int main() {
