@@ -2,6 +2,7 @@
 using namespace std;
 
 void calc() {
+    //in
     int n;
     cin >> n;
     vector<int> v(n);
@@ -10,29 +11,49 @@ void calc() {
         cin >> v[i];
         mp[v[i]]++;
     }
-    vector<int> ans;
-    int s=mp.size();
-    for(int k=0;k<=n;k++){
-        int cn=0;
-        int flag=0;
-        if(k==0 || k==n) ans.push_back(1);
-        else if(k<=n/2){ 
-            for(auto el : mp){
-                if(el.second<=k) cn++;
-                if(el.first==0 && el.second<=k) flag=1;  
-            }
-            if(flag){
-                ans.push_back(cn);
-            }
-            else{
-                ans.push_back(cn+1);
-            }
+
+    //mex calc
+    set<int> s;
+    for(int i=0;i<n;i++){
+        s.insert(v[i]);
+    }
+    int mex=s.size();
+    int cn1=0;
+    for(auto el : s){
+        if(el!=cn1){
+            mex=cn1;
+            break;
         }
-        else{
-            ans.push_back(s);
-            s--;
+        cn1++;
+    }
+
+
+    vector<int> ans(n+1,1);
+    if(mex<1){
+        for(auto el : ans){
+            el=mex;
+        }
+        for(auto el : ans){
+        cout<<el<<" ";
+        }
+    cout<<endl;
+    return;
+    }
+    int k=n-1;
+    for(int i=0;i<mex-1;i++){
+        ans[k]=i+2;
+        k--;
+    }
+    map<int,int> help;
+    for(auto el : mp){
+        if(el.first<mex) {
+            help[el.second]++;
         }
     }
+    for(int i=1;i<=k;i++){
+        ans[i]=ans[i-1]+help[i];
+    }
+    
     for(auto el : ans){
         cout<<el<<" ";
     }
