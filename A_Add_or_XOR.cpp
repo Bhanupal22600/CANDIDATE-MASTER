@@ -2,52 +2,48 @@
 using namespace std;
 
 void calc() {
-    int a, b, x, y;
-    cin >> a >> b >> x >> y;
-
-    if (a == b) {
-        cout << 0 << '\n';
+   int a,b,x,y;
+   cin>>a>>b>>x>>y;
+    if(a==b){
+        cout<<0<<endl;
         return;
     }
-
-    if (a < b) {
-        int diff = b - a;
-
-        if (x <= y) {
-            cout << 1LL * diff * x << '\n';
+   if(b>a){
+        int diff=b-a;
+        int s=0;
+        if(x<=y){
+            cout<<diff*x<<endl;
             return;
         }
-        long long cost = 0;
-
-        if (a % 2 == 0) {
-            a ^= 1;
-            cost += y;
+        else if(a%2!=0){
             diff--;
+            s+=x;
+            int k=(diff+1)/2;
+            s+=k*y;
+            s+=(diff-k)*x;
         }
-        int usePairs = diff / 2;
-        int useAdd = diff % 2;
-
-        cost += 1LL * usePairs * (x + y) + 1LL * useAdd * x;
-        cout << cost << '\n';
+        else{
+            int k=(diff+1)/2;
+            s+=k*y;
+            s+=(diff-k)*x;
+        }
+        cout<<s<<endl;
         return;
-    }
-
-    if (a == b + 1 && a % 2 == 1) {
-        cout << y << '\n';
-    } else {
-        cout << -1 << '\n';
-    }
+        
+   }
+   else if(b+1==a && a%2==1){
+    cout<<y<<endl;
+   }
+   else {
+    cout<<-1<<endl;
+   }
 }
 
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
-
     int t;
     cin >> t;
     while (t--) {
         calc();
     }
-
     return 0;
 }

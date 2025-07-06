@@ -1,40 +1,57 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-bool isValid(long long a, long long b) {
-    return (a & b) == (a ^ b);
-}
-
-void solve() {
+void calc() {
     long long n, l, r, k;
     cin >> n >> l >> r >> k;
-
-    if (n == 1) {
-        cout << l << endl;
+    if(n%2!=0){
+        cout<<l<<endl;
         return;
     }
+    else{
+        if(n<3){
+            cout<<-1<<endl;
+            return;
+        }
+        /*long long p = 1;
+while (p <= l) p *= 2;
 
-    long long best = -1;
+if (p > r) {
+    cout << -1 << endl;
+    return;
+}
 
-    for (long long a = l; a <= min(r, l + 1000); ++a) {
-        for (long long b = a; b <= min(r, a + 1000); ++b) {
-            if (isValid(a, b)) {
-                vector<long long> res;
-                res.push_back(a);
-                res.push_back(b);
-                while (res.size() < n) res.push_back(a);
-                cout << res[k - 1] << endl;
+if (k <= n - 2) {
+    cout << l << endl;
+} else {
+    cout << p << endl;
+}
+*/
+        long long p = 2;
+        while (p <= l) {
+            p *= 2;
+        }
+        if ( p <= r) {
+            if(k==n-1 || k==n){
+                cout<<p<<endl;
+                return;
+            }
+            else{
+                cout<<l<<endl;
                 return;
             }
         }
-    }
+        else{
+            cout<<-1<<endl;
+            return;
+        }
 
-    cout << -1 << endl;
+    }
 }
 
 int main() {
     int t;
     cin >> t;
-    while (t--) solve();
+    while (t--) calc();
     return 0;
 }
