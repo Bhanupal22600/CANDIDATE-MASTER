@@ -17,7 +17,6 @@ int f(int n){
 }
 ll fbu(int n){
     dp[0]=1;
-
     for(int k=1;k<=n;k++){
         ll sum =0;
         for(int i=1;i<=6;i++){
