@@ -13,7 +13,7 @@ void calc() {
         freq[msb]++;
     }
 
-    long long ans = 0;
+    long long ans = 0;//
     for (long long f : freq) {
         ans += f * (f - 1) / 2; 
     }
