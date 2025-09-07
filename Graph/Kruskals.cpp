@@ -4,7 +4,6 @@ using namespace std;
 int find(vector<int> &parent,int a){
     return parent[a] = ((parent[a]==a) ? a : find(parent,parent[a]));
 }
-
 void Union(vector<int> &parent, vector<int> &rank, int a, int b)
 {
     // TX:(log*n);
@@ -23,17 +22,14 @@ void Union(vector<int> &parent, vector<int> &rank, int a, int b)
         parent[a] = b;
     }
 }
-
 struct Edge{
     int src;
     int dest;
     int wt;
 };
-
 bool cmp(Edge e1,Edge e2){
     return e1.wt < e2.wt ;
 }
-
 ll kruskal (vector<Edge> &input,int n, int e){
     sort(input.begin(),input.end(),cmp);
     vector<int> parent(n+1);
@@ -58,7 +54,6 @@ ll kruskal (vector<Edge> &input,int n, int e){
     }
     return ans;
 }
-
 int main(){
     int n,e;
     cin>>n>>e;
