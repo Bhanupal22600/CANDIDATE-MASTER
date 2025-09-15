@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -31,54 +32,38 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    long long a,b;
-    cin >> a >> b;
-    if((a*b)%2==1){
-        cout<<a*b+1<<endl;
-        return;
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for(int i = 0; i < n; ++i) {
+        cin >> v[i];
     }
-    else if(b%2==1){
-        cout<<-1<<endl;
-        return;
-    }
-    else if(a%2==0 && b!=1){
-        int f=0;
-        for(int i=b-1;i>=b/2;i--){
-            if(b%i==0 && (b/i)%2==0){
-                f=1;
-                cout<<a*i+b/i<<endl;
-                return;
-            }
-        }
-        if(!f){
-            cout<<-1<<endl;
-            return;
+    int f=0;
+    int k=0;
+    for(int i=0;i<n;i++){
+        if(v[i]==1) {
+            f=1;
+            k=i;
+            break;
         }
     }
-    else if(a%2==1 && b%2==0){
-        int f=0;
-        for(int i=b;i>0;i--){
-            if((b%i==0 && (b/i)%2==0  && i%2==0) || (b%i==0 && (b/i)%2==1  && i%2==1)){
-                f=1;
-                cout<<a*i+b/i<<endl;
-                return;
-            }
-        }
-        if(!f){
-            cout<<-1<<endl;
-            return;
+    int l=0;
+    int h=0;
+    for(int i=n-1;i>k;i--){
+        if(v[i]==1) {
+            h=1;
+            l=i;
+            break;
         }
     }
-    cout<<-1<<endl;
-    return;
-    
+    if(f && h) cout<<l-k<<endl;
+    else cout<<0<<endl;
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin >> t;
+    int t=1;
     while(t--) {
         calc();
     }

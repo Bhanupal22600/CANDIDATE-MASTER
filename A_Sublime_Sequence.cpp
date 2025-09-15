@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -31,47 +32,15 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    long long a,b;
-    cin >> a >> b;
-    if((a*b)%2==1){
-        cout<<a*b+1<<endl;
-        return;
-    }
-    else if(b%2==1){
-        cout<<-1<<endl;
-        return;
-    }
-    else if(a%2==0 && b!=1){
-        int f=0;
-        for(int i=b-1;i>=b/2;i--){
-            if(b%i==0 && (b/i)%2==0){
-                f=1;
-                cout<<a*i+b/i<<endl;
-                return;
-            }
-        }
-        if(!f){
-            cout<<-1<<endl;
-            return;
-        }
-    }
-    else if(a%2==1 && b%2==0){
-        int f=0;
-        for(int i=b;i>0;i--){
-            if((b%i==0 && (b/i)%2==0  && i%2==0) || (b%i==0 && (b/i)%2==1  && i%2==1)){
-                f=1;
-                cout<<a*i+b/i<<endl;
-                return;
-            }
-        }
-        if(!f){
-            cout<<-1<<endl;
-            return;
-        }
-    }
-    cout<<-1<<endl;
-    return;
-    
+    int n,k;
+    cin >> k >> n;
+   if(n%2==0){
+    cout<<0<<endl;
+   }
+   else{
+    cout<<k<<endl;
+   }
+   return ;
 }
 
 int main() {
