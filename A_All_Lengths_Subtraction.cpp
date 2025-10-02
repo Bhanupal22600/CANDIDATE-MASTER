@@ -37,56 +37,12 @@ void calc() {
     for(int i = 0; i < n; ++i) {
         cin >> v[i];
     }
-    int cn=1;
-    int i=0;
-    int maxm=0;
-    for(int k=1;k<n;k++){
-        if(v[i]>maxm) {
-            maxm=v[i];
-            i=k;
-        }
-    }
-    int j=i;
-    int f=0;
-    int f1=0;
-    
-    while(i>=0 && i<=n-1){
-        if(i-1>=0 && v[i-1]+1==v[i] ){
-            i--;
-            
-        }
-        else if(i+1<=n-1 && v[i+1]+1==v[i]){
-            i++;
-            if(!f) {
-                j++;
-                f=1;
-            }
-
-        }
-        
-        else{
+    for(int i=1;i<n-1;i++){
+        if(v[i-1]>v[i] && v[i]<v[i+1]){
             cout<<"NO"<<endl;
             return;
         }
-        debug(i);
-    }
-    if(v[i+1]+1==v[i]){
-        f1=1;
-    }
-    else if(v[i-1]+1==v[i]){
-        f1=0;
-    }
-    while(j>=0 || j<=n-1){
-        if(v[j-1]+1==v[i]){
-            j--;
-        }
-        else if(v[j+1]+1==v[i]){
-            j++;
-        }
-        else{
-            cout<<"NO"<<endl;
-            return;
-        }
+       
     }
     cout<<"YES"<<endl;
     return;

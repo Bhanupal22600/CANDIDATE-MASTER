@@ -16,32 +16,51 @@ template<typename T,typename U> void _print(pair<T,U> p){cerr<<"{";_print(p.firs
 template<typename T> void _print(vector<T> v){cerr<<"[";for(size_t i=0;i<v.size();++i){_print(v[i]);if(i+1<v.size())cerr<<", ";}cerr<<"]";}
 
 void calc(){
-    int n,m;cin>>n>>m;
-    vector<vector<int>> s(n);
-    vector<int> freq(m+1,0);
-    for(int i=0;i<n;i++){
-        int l;cin>>l;
-        s[i].resize(l);
-        for(int j=0;j<l;j++){
-            cin>>s[i][j];
-            freq[s[i][j]]++;
+   int n,m;
+   cin>>n>>m;
+   vector<vector<int>> v;
+   map<int,int> mp;
+   for(int i=0;i<n;i++){
+        int a;
+        cin>>a;
+        vector<int> u(a);
+        for(int i=0;i<a;i++){
+            cin>>u[i];
+            mp[u[i]]++;
         }
-        sort(s[i].begin(),s[i].end());
-    }
-    for(int i=1;i<=m;i++){
-        if(freq[i]==0){cout<<"NO\n";return;}
-    }
-    for(int i=0;i<n;i++){
-        for(int j=0;j<n;j++){
-            if(i==j) continue;
-            if(includes(s[j].begin(),s[j].end(),s[i].begin(),s[i].end())){
-                cout<<"NO\n";return;
-            }
-        }
-    }
-    cout<<"YES\n";
-}
+        v.push_back(u);
+   }
 
+   for(int i=1;i<=m;i++){
+    if(mp[i]==0){
+        cout<<"NO"<<endl;
+        return;
+    }
+   }
+
+   int c=0;
+   int nc=0;
+   for(auto i : v){
+    int f=0;
+    for(auto el : i){
+        if(mp[el]==1){
+            c++;
+            f=1;
+            break;
+        }
+    }
+    if(!f)
+        nc++;
+   }
+   if(nc>1){
+    cout<<"YES"<<endl;
+   }
+   else{
+    cout<<"NO"<<endl;
+   }
+   return;
+
+}
 int main(){
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
