@@ -35,12 +35,10 @@ void calc() {
     int n;
     cin >> n;
     vector<int> v(n);
-    set<int> s;
     for(int i = 0; i < n; ++i) {
         cin >> v[i];
-        s.insert(v[i]);
     }
-    cout<<2*(s.size()-1)+1<<endl;
+    
     
 }
 

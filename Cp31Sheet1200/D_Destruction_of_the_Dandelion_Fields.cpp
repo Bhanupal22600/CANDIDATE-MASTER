@@ -31,34 +31,41 @@ void _print(vector<T> v) {
     }
     cerr << "]";
 }
-void solve() {
-    int n;
+void calc() {
+    long long n;
     cin >> n;
-    vector<long long> a(n);
-    long long total = 0;
-    long long minOdd = LLONG_MAX;
-    bool hasOdd = false;
-
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        total += a[i];  
-        if (a[i] % 2 == 1) {
-            hasOdd = true;
-            minOdd = min(minOdd, a[i]);
-        }
+    vector<long long> v(n);
+    vector<long long> u;
+    for(long long i = 0; i < n; ++i) {
+        cin >> v[i];
+        if(v[i]%2) u.push_back(v[i]);
     }
-
-    if (!hasOdd) {
-        cout << 0 << "\n";
-    } else {
-        cout << total - minOdd << "\n";
+    long long s=accumulate(v.begin(),v.end(),0LL);
+    if(!u.size()){
+        cout<<0<<endl;
+        return;
     }
+    sort(u.begin(),u.end());
+    
+    int x=u.size()/2;
+    int i=0;
+    for(auto el : u){
+        if(i==x) break;
+        s-=el;
+        i++;
+    }
+    cout<<s<<endl;
+    return;
+
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
     int t;
     cin >> t;
-    while (t--) solve();
+    while(t--) {
+        calc();
+    }
+    return 0;
 }

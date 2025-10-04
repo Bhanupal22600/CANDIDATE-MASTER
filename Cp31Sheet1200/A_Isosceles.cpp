@@ -6,7 +6,6 @@ using namespace std;
 #else
 #define debug(x)
 #endif
-
 void _print(int a) { cerr << a; }
 void _print(long long a) { cerr << a; }
 void _print(char a) { cerr << a; }
@@ -32,23 +31,23 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int n;
-    cin >> n;
-    vector<int> v(n);
-    set<int> s;
-    for(int i = 0; i < n; ++i) {
-        cin >> v[i];
-        s.insert(v[i]);
+    int a,b,c;
+    cin>>a>>b>>c;
+    if(a==b || b==c || c==a){
+        cout<<"Yes";
     }
-    cout<<2*(s.size()-1)+1<<endl;
+    else{
+        cout<<"No";
+    }
+    return ;
     
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t;
-    cin >> t;
+    int t=1;
+    
     while(t--) {
         calc();
     }

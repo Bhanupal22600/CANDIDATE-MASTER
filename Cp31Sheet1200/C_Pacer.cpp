@@ -35,26 +35,32 @@ void _print(vector<T> v) {
 
 void calc() {
     int n;
-    long long m;
+    int m;
     cin >> n >> m;
-
-    vector<pair<long long,int>> req(n+1);
-    req[0] = {0,0};
-    for(int i=1;i<=n;i++) cin >> req[i].first >> req[i].second;
-
-    long long ans = 0;
+    int ans=m;
+    int o=1;
+    int e=0;
+    int a,b;
     for(int i=0;i<n;i++){
-        long long gap = req[i+1].first - req[i].first;
-        int side1 = req[i].second, side2 = req[i+1].second;
-
-        if(side1 == side2) ans += gap - (gap % 2);
-        else ans += gap - ((gap+1) % 2);
+        cin>>a>>b;
+        if(a%2){
+            if(b%2!=o){
+                ans--;
+                e=!e;
+                o=!o;
+            }
+        }
+        else{
+            if(b%2!=e){
+                ans--;
+                e=!e;
+                o=!o;
+            }
+        }
+        
     }
-
-    long long lastGap = m - req[n].first;
-    ans += lastGap;
-
-    cout << ans << "\n";
+    cout<<ans<<endl;
+        return;
 }
 
 int main(){

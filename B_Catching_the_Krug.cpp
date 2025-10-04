@@ -32,15 +32,33 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int n;
+    long long n;
     cin >> n;
-    vector<int> v(n);
-    set<int> s;
-    for(int i = 0; i < n; ++i) {
-        cin >> v[i];
-        s.insert(v[i]);
+    long long kx,ky,dx,dy;
+    cin>>kx>>ky>>dx>>dy;
+    long long cn=0;
+    long long maxm=0;
+    if(n==1) {
+        cout<<1<<endl;
+        return;
     }
-    cout<<2*(s.size()-1)+1<<endl;
+    if(kx<dx){
+        maxm=kx-0 + dx-kx;
+    }
+    else if(kx>dx){
+        maxm=n-kx + kx-dx;
+    }
+    
+    if(ky<dy){
+        maxm=max(ky-0+dy-ky,maxm);
+    }
+    else if(dy<ky){
+        maxm=max(n-ky+ky-dy,maxm);
+    }
+    cn=maxm;
+    // cn+=min(abs(kx-dx),abs(dy-ky));
+    cout<<cn<<endl;
+    return;
     
 }
 
