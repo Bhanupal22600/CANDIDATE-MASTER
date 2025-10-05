@@ -31,54 +31,44 @@ void _print(vector<T> v) {
     }
     cerr << "]";
 }
+
 void calc() {
-    int n,k;
+    int n, k;
     cin >> n >> k;
-    vector<int> v(n);
-    for(int i = 0; i < n; ++i) {
-        cin >> v[i];
-    }
-    vector<int> p0(n,0);
-    vector<int> p1(n,0);
-    vector<int> s0(n,0);
-    vector<int> s1(n,0);
-    int q,w;
-    for(int i=0;i<n;i++){
-        if(v[i]==1) w++;
-        else q++;
-        p0[i+1]=q;
-        p1[i+1]=w;
+    vector<vector<char>> v(n, vector<char>(n,'D'));
+    if(k == (n*n) - 1) {
+        cout << "NO" << endl;
+        return;
+    } else {
+        cout << "YES" << endl;
     }
 
-    int a,b;
-    for(int j=0;j<k;j++){
-        cin>>a>>b;
-        int cn1=0;
-        int cn0=0;
-        for(int i=a-1;i<b;i++){
-            if(v[i]==0) cn0++;
-            else cn1++;
+    int a = (n*n) - k;
+    int cn = 0;
+    for(int j = 0; j < n; ++j){
+        
+        for(int i = 0; i < n; ++i) {
+            if(cn == a) break;
+            if(i == 0) v[i][j] = 'D';
+            else v[i][j] = 'U';
+            cn++;
         }
-        if(cn1 % 3 != 0 || cn0 % 3 != 0){
-            cout<<-1<<endl;
-            continue;
-        }
-        int z=0;
-        int o=0;
-        for(int i=a-1;i<b-1;i++){
-            if(v[i]==v[i+1] && v[i]==1) o++;
-            else if(v[i]==v[i+1] && v[i]==0) z++;
-        }
-        if(o || z){
-            cout<<(cn1+cn0)/3;
-        }
-        else{
-            cout<<(cn1+cn0+3)/3;
-        }
-        cout<<endl;
+        
     }
-    return;
+
+    if(a % n == 1) {
+        int j = a / n;
+        if(j < n) v[0][j] = 'L'; 
+    }
+
+    for(auto &el : v){
+        for(auto &i : el){
+            cout << i;
+        }
+        cout << "\n";
+    }
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
