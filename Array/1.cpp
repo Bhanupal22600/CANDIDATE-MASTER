@@ -2,12 +2,18 @@
 #include<iostream>
 using namespace std;
 int main(){
-    int arr[5]={90,30,27,45,40};
+    while(1){
+        int house[5];
+        for(int i=0;i<5;i++){
+            cin>>house[i];
+        }
+    cout<<house[4]<<endl;
     for(int i=0;i<=4;i++){
-        if(arr[i]<35){
+        if(house[i]>35){
             cout<<i<<endl;
-
         }
     }
+    }
+    
 
 }

@@ -4,9 +4,10 @@ int main(){
     int x=4,y=2;
     if(x>y and y<x) cout<<x;
 }
+
 /*
 logical operator(applied on boolean ):
-ans &&
+and &&
 or ||
 not !
 Basic bitwise operations(applied on bits)

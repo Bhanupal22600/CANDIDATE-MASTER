@@ -27,5 +27,4 @@ int main(){
     int n=10;
     findunique(arr,n);
     return 0;
-
 }
