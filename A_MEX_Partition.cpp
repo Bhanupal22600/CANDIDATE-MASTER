@@ -32,22 +32,22 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int x,y,z;
-    cin>>x>>y>>z;
-   int a,b,c;
-   
-    a=x|z;
-    b=x|y;
-    c=y|z;
-    if((a&b)!=x || (a&c)!=z || (b&c)!=y){
-        cout<<"NO"<<endl;
+    int n;
+    cin >> n;
+    set<int> s;
+    int a;
+    for(int i = 0; i < n; ++i) {
+        cin >> a;
+        s.insert(a);
     }
-    else{
-        cout<<"YES"<<endl;
+    for(int i=0;i<=101;i++){
+        if(s.find(i)==s.end()){
+            cout<<i<<endl;
+            return;
+        }
     }
-    return;
-   
 }
+
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
