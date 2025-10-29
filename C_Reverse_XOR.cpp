@@ -31,7 +31,6 @@ void _print(vector<T> v) {
     }
     cerr << "]";
 }
-
 bool isPalindrome(const string &s) {
     int l = 0, r = (int)s.size() - 1;
     while (l < r) {
@@ -41,40 +40,59 @@ bool isPalindrome(const string &s) {
     }
     return true;
 }
-
+string decimal_to_binary(int num){
+    if(num==0) return "0";
+    string result="";
+    while(num>0){
+        if(num%2==0){
+            //even
+            result = "0"+ result;
+        }
+        else{
+            result="1" + result;
+        }
+        num=num/2;
+    }
+    return result;
+}
 void calc() {
     int n;
     cin >> n;
+    if(n==1 || n==2) {
+        cout<<"NO"<<endl;
+        return;
+    }
+    string s =decimal_to_binary(n);
 
-    int ones = __builtin_popcount(n);
-
-    // Step 1: If odd popcount → NO
-    if (ones % 2) {
-        cout << "NO\n";
+    if (s.size()%2==1 &&  s[s.size()/2]!='1' && isPalindrome(s)  ) {
+        cout << "YES\n";
+        return;
+    }
+    else if(isPalindrome(s) && s.size()%2==0){
+        cout<<"YES"<<endl;
         return;
     }
 
-    // Step 2: Convert n → binary string (without leading zeros)
-    string s = "";
-    int temp = n;
-    while (temp > 0) {
-        s.push_back((temp % 2) + '0');
-        temp /= 2;
+    string t = s;
+    for(int i = 0; i < 31; i++) {
+        t = '0' + t;
+        s = t;
+        if (s.size()%2==1 &&  s[s.size()/2]!='1' && isPalindrome(s)  ) {
+            cout << "YES\n";
+            return;
+        }
+        else if(isPalindrome(s) && s.size()%2==0){
+            cout<<"YES"<<endl;
+            return;
+        }
+        else if (isPalindrome(s) ){
+            cout << "YES\n";
+            return;
+        }
     }
     
-
-    // Step 3: Check symmetry
-    if (isPalindrome(s)) {
-        cout << "YES\n";
-        return;
-    }
-
-    // Step 4: Add '0' at beginning and check again
-    s = '0' + s;
-    if (isPalindrome(s))
-        cout << "YES\n";
-    else
-        cout << "NO\n";
+    cout<<"NO"<<endl;
+    return;
 }
 
 int main() {
