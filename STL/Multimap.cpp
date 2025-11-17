@@ -22,7 +22,6 @@ void explainMultiMap() {
     if (it != mmp.end()) {
         cout << "First occurrence of key=1: " << it->first << " -> " << it->second << endl;
     }
-
     // erase all entries with key=1
     mmp.erase(1);
 

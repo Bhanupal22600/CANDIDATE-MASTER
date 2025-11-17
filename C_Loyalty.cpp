@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -31,31 +32,57 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int n,m;
-    cin >> n >> m;
-    vector<int> v(n);
-    int s=0;
+    long long n,x;
+    cin >> n>>x;
+    vector<long long> v(n);
     for(int i = 0; i < n; ++i) {
         cin >> v[i];
-        s+=v[i];
     }
-    
-    for(auto el :v){
-        if(s-el==m){
-            cout<<"Yes";
-            return;
+    sort(v.begin(),v.end());
+    long long cn=0;
+    long long i=0;
+    long long j=n-1;
+    long long s=0;
+    long long b=0;
+    vector<long long> u;
+    while(v[j]==x){
+        cn+=x;
+        u.push_back(v[j]);
+        j--;
+    }
+    while(i<=j){
+        s+=v[j];
+        j--;
+        while(s<x && i<=j){
+            s+=v[i];
+            u.push_back(v[i]);
+            i++;
         }
+        if(s>=x){
+            cn+=v[j+1];
+            s=s%x;
+            u.push_back(v[j+1]);
+        }
+        else{
+            u.push_back(v[j+1]);
+            break;
+        }
+        
+        
     }
-    cout<<"No";
+    cout<<cn<<endl;
+    for(long long i=0;i<u.size();i++){
+        cout<<u[i]<<" ";
+    }
+    cout<<endl;
     return;
-
-    
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t=1;
+    int t;
+    cin >> t;
     while(t--) {
         calc();
     }

@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -30,34 +31,62 @@ void _print(vector<T> v) {
     }
     cerr << "]";
 }
-void calc() {
-    int n,m;
-    cin >> n >> m;
+void calc(int t,int i) {
+
+    int n;
+    cin >> n;
+    
     vector<int> v(n);
-    int s=0;
     for(int i = 0; i < n; ++i) {
         cin >> v[i];
-        s+=v[i];
+        
     }
-    
-    for(auto el :v){
-        if(s-el==m){
-            cout<<"Yes";
-            return;
+    // if(t==2000 && i==446 && n!=1 ){
+    //     cout<<v[1]<<endl;
+    //     return;
+    // }
+    if( n==1){
+        cout<<"YES"<<endl;
+        return;
+    }
+    map<int,int> mp;
+    for(auto el : v){
+        int t=el;
+    for(int i=2;i*i<=el;i++){
+        while(t%i==0){
+            mp[i]++;
+            t/=i;
         }
     }
-    cout<<"No";
-    return;
-
-    
+    if(t!=1) mp[t]++;
 }
 
+
+    if(mp.size()==0){
+        cout<<"YES"<<endl;
+        return;
+    }
+    int k=0;
+    for(auto el : mp){
+       if(el.second%n!=0){
+        cout<<"NO"<<endl;
+        return;
+       }
+    }
+    
+        cout<<"YES"<<endl;
+    
+
+    return;
+}
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t=1;
-    while(t--) {
-        calc();
+    int t;
+    cin >> t;
+    for(int i=1;i<=t;i++) {
+
+        calc(t,i);
     }
     return 0;
 }

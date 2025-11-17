@@ -71,7 +71,7 @@ void calc() {
         }
         
         reverse(h.begin(),h.end());
-       
+        
         vector<int> v;
         for(int i=0;i<g.size();i++){
             if(g[i]!=h[i]){

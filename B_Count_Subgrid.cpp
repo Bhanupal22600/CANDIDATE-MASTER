@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -31,25 +32,22 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int n,m;
-    cin >> n >> m;
-    vector<int> v(n);
-    int s=0;
-    for(int i = 0; i < n; ++i) {
-        cin >> v[i];
-        s+=v[i];
-    }
-    
-    for(auto el :v){
-        if(s-el==m){
-            cout<<"Yes";
-            return;
+    int N, M;
+    cin >> N >> M;
+    vector<string> S(N);
+    for (int i = 0; i < N; i++) cin >> S[i];
+
+    set<vector<string>> patterns;
+    for (int i = 0; i + M <= N; i++) {
+        for (int j = 0; j + M <= N; j++) {
+            vector<string> sub;
+            for (int x = 0; x < M; x++) {
+                sub.push_back(S[i + x].substr(j, M));
+            }
+            patterns.insert(sub);
         }
     }
-    cout<<"No";
-    return;
-
-    
+    cout << patterns.size() << endl;
 }
 
 int main() {

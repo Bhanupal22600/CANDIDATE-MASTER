@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -30,32 +31,36 @@ void _print(vector<T> v) {
     }
     cerr << "]";
 }
+
 void calc() {
-    int n,m;
-    cin >> n >> m;
-    vector<int> v(n);
-    int s=0;
-    for(int i = 0; i < n; ++i) {
-        cin >> v[i];
-        s+=v[i];
+    long long n;
+    cin >> n;
+    if (n < 7) { // smallest snowflake is 7 (k=2)
+        cout << "NO\n";
+        return;
     }
-    
-    for(auto el :v){
-        if(s-el==m){
-            cout<<"Yes";
+
+   for (int k = 2; k <= 1000; k++) {
+    long long sum = 1 + k + k * k;
+    while (sum <= n) {
+        if (sum == n) {
+            cout << "YES\n";
             return;
+            
         }
+        sum = sum * k + 1;
     }
-    cout<<"No";
-    return;
-
-    
 }
+cout << "NO\n";
 
+
+    return;
+}
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t=1;
+    int t;
+    cin >> t;
     while(t--) {
         calc();
     }

@@ -21,6 +21,7 @@ void _print(pair<T, U> p) {
     _print(p.second);
     cerr << "}";
 }
+
 template<typename T>
 void _print(vector<T> v) {
     cerr << "[";
@@ -31,31 +32,31 @@ void _print(vector<T> v) {
     cerr << "]";
 }
 void calc() {
-    int n,m;
-    cin >> n >> m;
+    int n;
+    cin >> n;
     vector<int> v(n);
-    int s=0;
     for(int i = 0; i < n; ++i) {
         cin >> v[i];
-        s+=v[i];
     }
-    
-    for(auto el :v){
-        if(s-el==m){
-            cout<<"Yes";
-            return;
-        }
+    vector<int> u(n);
+    for(int i = 0; i < n; ++i) {
+        cin >> u[i];
     }
-    cout<<"No";
-    return;
-
+    vector<pair<int,int>> dp1(n,{0,0});
+    vector<pair<int,int>> dp2(n,{0,0});
+    int minm=INT_MAX;
+    int maxm=0;
+    for(int i=0;i<n;i++){
+        dp[i]=
+    }
     
 }
 
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-    int t=1;
+    int t;
+    cin >> t;
     while(t--) {
         calc();
     }
