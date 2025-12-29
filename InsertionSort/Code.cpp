@@ -67,8 +67,6 @@ e.g- 4a 4b 2 1
 
 
 
-
-
 # BTW these three sort selection sort sabse bekar hai
 and insertion , bubble agar optimised wala ho toh barabar hai
 */

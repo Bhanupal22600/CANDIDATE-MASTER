@@ -13,15 +13,12 @@ void merge(vector<int>& a,vector<int>& b,vector<int>& res){
         while(j<b.size()){
             res[k++] = b[j++];
         }
-
     }
     if(j==b.size()){// b is at end
         while(i<a.size()){
             res[k++] = a[i++];
         }
-
     }
-    
 }
 int main(){
     int arr[]={1,4,5,8};

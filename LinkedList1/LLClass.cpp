@@ -178,8 +178,8 @@ int main(){
     ll.display();
 
 
-    deletenode(a,d);
-    ll.display()
+    // ll.deletenode(head);
+    ll.display();
 
     cout<<endl<<ll.size;
 }

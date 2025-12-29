@@ -119,6 +119,6 @@ calci.a=10;
 calci.b=7;
 calci.add();// mtlb calculator class m jao then add function ko kro for a variable (object) calci
 
-Calculator c(4,5);
-cout<<c.b<<endl;
+// Calculator c(4,5);
+// cout<<c.b<<endl;
 }
