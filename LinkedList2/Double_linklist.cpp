@@ -184,7 +184,6 @@ int main(){
 
     cout<<endl;
 
-    
     //double linklist
     DLL List;
     List.insertAtTail(10);
